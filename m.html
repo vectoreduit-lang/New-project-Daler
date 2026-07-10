@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>String Methods Trainer</title>
+</head>
+<body>
+
+    <div>
+        <input type="text" id="str" value="Salimov">
+    </div><br>
+
+    <div>
+        <span>length</span>
+        <input type="text" id="i-len">
+        <input type="text" id="m-len" readonly style="width:20px;">
+    </div>
+
+    <div>
+        <span>find</span>
+        <input type="text" id="i-f1">
+        <input type="text" id="m-f1" readonly style="width:20px;">
+    </div>
+
+    <div>
+        <span>find</span>
+        <input type="text" id="i-f2">
+        <input type="text" id="m-f2" readonly style="width:20px;">
+    </div>
+
+    <div>
+        <span>reverse</span>
+        <input type="text" id="i-rev">
+        <input type="text" id="m-rev" readonly style="width:20px;">
+    </div>
+
+    <div>
+        <span>up/low</span>
+        <input type="text" id="i-up">
+        <input type="text" id="m-up" readonly style="width:20px;">
+    </div><br>
+
+    <div>
+        <button onclick="check()">check</button>
+    </div>
+
+<script>
+    function check() {
+        let s = document.getElementById('str').value;
+
+        let len = document.getElementById('i-len').value;
+        set('m-len', parseInt(len) === s.length);
+
+        let f1 = document.getElementById('i-f1').value;
+        set('m-f1', s.includes(f1) && f1 !== '');
+
+        let f2 = document.getElementById('i-f2').value;
+        set('m-f2', s.includes(f2) && f2 !== '');
+
+        let rev = document.getElementById('i-rev').value;
+        let revS = s.split('').reverse().join('');
+        set('m-rev', rev === revS);
+
+        let up = document.getElementById('i-up').value;
+        set('m-up', up === s.toUpperCase() || up === s.toLowerCase());
+    }
+
+    function set(id, ok) {
+        let el = document.getElementById(id);
+        el.style.backgroundColor = ok ? 'red' : 'black';
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+.box{
+    background-color: rgb(84, 209, 105);
+    width: 150px;
+    height: 100px;
+    border: 3px double rgb(170, 255, 0) ;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 20px 20px 20px green;
+    display: inline-flex;
+}
+.box:hover{
+    background-color:rgb(50, 175, 140);
+    box-shadow: 20px 20px 20px rgb(78, 170, 45);
+}
